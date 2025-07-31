@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="background-color: black; color: white;">
+    <h1 id="head">Yogi and textChange !</h1>
+    <button id="change">change</button>
+    <button id="Reset">Reset</button>
+</body>
+<script>
+    let changed = false;
+
+    document.querySelector('#change').addEventListener('click', function () {
+        if (!changed) {
+            document.querySelector('h1').innerHTML = "Papa hu mai sabka papa";
+            console.log("changed");
+            changed = true;
+        }
+    });
+
+    document.querySelector('#Reset').addEventListener('click', function () {
+        if (changed) {
+            document.querySelector('h1').innerHTML = "Yogi and textChange !";
+            console.log("Reset");
+            changed = false;
+        }
+    });
+</script>
+
+</html>

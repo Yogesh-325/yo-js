@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: black; color: white;">
+    <!-- this is the 37th video summary
+    Async code :- <br>
+    by default js is Syncronous, single threaded language that's why slow as compare to cpp <br>
+
+    Execution context :- execute one line of code at a time "each operation waits for the last one to complete before
+    executing" <br>
+
+    Bloking code -> block the flow of program -> read file Sync <br>
+    vs <br>
+    Non-Bloking code - does not block execution -> Read file Async <br> -->
+    <h1>Yogi and code!</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    // setTimeout se hum kisi block of code ko execute turant na karke thode samay baad execute karte hai
+    setTimeout(function(){
+        console.log("yogesh")
+    }, 2000)
+    // ye sirf ek baar chalenga => setTimeout()
+    
+    const sayRam = function(){
+        console.log("Ram")
+    }
+    const changeText = function(){
+        document.querySelector('h1').innerHTML = "Papa hu mai sabka papa"
+    }
+
+    const changeHeading = setTimeout(changeText, 4000)
+
+    // agar mujhe ye change hone wale text ko rokhna hai stop button se toh mujhe clearTimeout lagana padenga button ko call karne ke sath >> time out hone se pahale (4 second ke aandar)
+    document.querySelector('#stop').addEventListener('click', function(){
+        clearTimeout(changeHeading)
+        console.log("STOPPED")
+    })
+
+    setTimeout(sayRam, 3000) // ye sayRam ko call karenga aur (3 second me) yogesh ke baad ram ko print kar denga
+</script>
+</html>

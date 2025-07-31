@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events third</title>
+</head>
+
+<body style="background-color: black; color: white;">
+    <h1>Yogi and JavaScript!</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    let intervalId; // Declare globally to track and clear the interval
+
+    const sayDate = function (str) {
+        console.log(str, new Date().toLocaleTimeString());
+    }
+
+    document.querySelector('#start').addEventListener('click', function () {
+        if (!intervalId) { // Prevent multiple intervals
+            intervalId = setInterval(sayDate, 10000, "Hi");
+            console.log("STARTED");
+        }
+    });
+
+    document.querySelector('#stop').addEventListener('click', function () {
+        clearInterval(intervalId);
+        intervalId = null; // Reset for reuse
+        console.log("STOPPED");
+    });
+</script>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yo-Js</title>
+</head>
+<style>
+    body {
+        color: white;
+        background-color: black;
+    }
+</style>
+
+<body>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, atque.</p>
+</body>
+<script>
+    const div = document.createElement('div')
+    console.log(div)
+    div.className = "main"
+    div.id = Math.round(Math.random() * 10 + 1);
+    // div.id = Math.round(Math.random() * 100 + 1);
+    div.setAttribute("title","generated title")
+    div.style.backgroundColor = "green";
+    div.style.border = "2px solid white";
+    div.style.borderRadius = "10px";
+    div.style.padding = "5px";
+    // div.innerText = "Chai aur Code";
+    const addText = document.createTextNode("mere pass sone ki chain hai aur maine isse apne gale me pahena hai jo mai sabhi se chupa kar rakh rahi hu")
+    div.appendChild(addText)
+
+    document.body.appendChild(div)
+
+    const newDiv = document.createElement('div')
+    console.log(newDiv);
+    newDiv.className = "song"
+    // newDiv.id = Math.round(Math.random() * 10 + 1)
+    newDiv.id = "Music";
+    newDiv.setAttribute("song", "shaky");
+    newDiv.style.height = "200px"
+    newDiv.style.width = "200px";
+    newDiv.style.border = "2px solid white";
+    newDiv.style.padding = "10px";
+    newDiv.style.margin = "5px";
+    newDiv.style.borderRadius = "50%"
+    newDiv.style.backgroundColor = "indigo"
+    newDiv.style.backgroundImage = "url('song.jpg')";
+    newDiv.style.backgroundSize = "cover";
+    newDiv.style.fontFamily = "Brush Script MT, Brush Script Std, cursive";
+    newDiv.style.fontSize = "35px";
+    newDiv.style.textAlign = "center";
+    newDiv.style.alignItems = "center";
+    newDiv.style.color = "gold";
+
+    const insert = document.createTextNode("shaky-shaky")
+    newDiv.appendChild(insert)
+    document.body.appendChild(newDiv)
+</script>
+
+</html>
